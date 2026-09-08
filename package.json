@@ -1,0 +1,24 @@
+{
+  "name": "nayumi-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Web de Agencia de Empleos NAYUMI",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "check": "npm run build && npm test",
+    "format": "prettier --write src scripts tests playwright.config.js",
+    "format:check": "prettier --check src scripts tests playwright.config.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "prettier": "3.9.6"
+  }
+}

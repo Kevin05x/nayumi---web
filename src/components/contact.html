@@ -1,0 +1,220 @@
+<section class="contact" id="contacto" aria-labelledby="contact-title">
+  <img
+    class="contact-image"
+    src="assets/acuerdo.webp"
+    alt="Apretón de manos como símbolo de confianza"
+    width="1672"
+    height="941"
+    loading="lazy"
+  />
+  <div class="contact-shade"></div>
+  <div class="wrap contact-content">
+    <p class="eyebrow reveal">07 / TU SIGUIENTE PASO EMPIEZA AQUÍ</p>
+    <h2 id="contact-title" class="reveal">Hagamos una<br /><em>buena conexión.</em></h2>
+    <div class="contact-paths contact-with-forms">
+      <article id="solicitar-personal">
+        <span class="eyebrow">PARA EMPRESAS Y HOGARES</span>
+        <h3 id="personal-form-title">El personal que necesitas.</h3>
+        <p>Cuéntanos qué necesitas. Llevamos los detalles de tu búsqueda a nuestra conversación.</p>
+        <form
+          class="whatsapp-form"
+          data-type="personal"
+          aria-labelledby="personal-form-title"
+          aria-describedby="personal-form-note"
+        >
+          <div class="form-field form-wide"
+            ><label for="personal-name">Tu nombre <span>*</span></label
+            ><input
+              id="personal-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              maxlength="80"
+              required
+              placeholder="¿Cómo te llamas?"
+          /></div>
+          <div class="form-field"
+            ><label for="personal-audience">Busco personal para <span>*</span></label
+            ><select id="personal-audience" name="audience" required
+              ><option value="">Selecciona una opción</option
+              ><option>Mi hogar</option
+              ><option>Mi empresa</option></select
+            ></div
+          >
+          <div class="form-field"
+            ><label for="personal-service">Servicio <span>*</span></label
+            ><select id="personal-service" name="service" required
+              ><option value="">¿A quién necesitas?</option
+              ><option>Niñeras</option
+              ><option>Cuidado de adulto mayor</option
+              ><option>Cocina</option
+              ><option>Limpieza</option
+              ><option>Choferes</option
+              ><option>Ventas</option
+              ><option>Almacén y logística</option
+              ><option>Atención al cliente</option
+              ><option>Otro</option></select
+            ></div
+          >
+          <div class="form-field"
+            ><label for="personal-district">Distrito o zona <span>*</span></label
+            ><input
+              id="personal-district"
+              name="district"
+              type="text"
+              maxlength="80"
+              required
+              placeholder="Ej. Ate, Lima"
+          /></div>
+          <div class="form-field"
+            ><label for="personal-schedule">Horario o modalidad <span>(opcional)</span></label
+            ><input
+              id="personal-schedule"
+              name="schedule"
+              type="text"
+              maxlength="80"
+              placeholder="Ej. lunes a viernes, 8 a 5"
+          /></div>
+          <div class="form-field form-wide"
+            ><label for="personal-details">¿Qué más debemos saber? <span>(opcional)</span></label
+            ><textarea
+              id="personal-details"
+              name="details"
+              rows="3"
+              maxlength="500"
+              placeholder="Cuéntanos las tareas, requisitos o cuándo te gustaría comenzar."
+            ></textarea>
+          </div>
+          <p id="personal-form-note" class="form-note form-wide"
+            >* Campos obligatorios. Se abrirá WhatsApp con tus respuestas para que las revises y
+            envíes. Este formulario no guarda tus datos en la web.</p
+          >
+          <div class="form-wide form-submit"
+            ><button type="submit" class="button blue" disabled
+              >Continuar en WhatsApp <span aria-hidden="true">↗</span></button
+            ></div
+          >
+          <div class="form-wide form-feedback"
+            ><p class="form-status" role="status" aria-live="polite"></p
+            ><a class="whatsapp-fallback" target="_blank" rel="noopener noreferrer" hidden
+              >Abrir WhatsApp con mi solicitud ↗</a
+            ></div
+          >
+        </form>
+        <a
+          class="direct-whatsapp"
+          href="https://wa.me/51950130473?text=Hola%20NAYUMI%2C%20quisiera%20solicitar%20personal."
+          target="_blank"
+          rel="noopener noreferrer"
+          >Prefiero escribir directamente <span>950 130 473 ↗</span></a
+        >
+      </article>
+      <article id="oportunidades">
+        <span class="eyebrow">PARA QUIENES BUSCAN TRABAJO</span>
+        <h3 id="trabajo-form-title">Tu próxima oportunidad.</h3>
+        <p>Queremos conocerte. Cuéntanos tu experiencia y el tipo de trabajo que buscas.</p>
+        <form
+          class="whatsapp-form"
+          data-type="trabajo"
+          aria-labelledby="trabajo-form-title"
+          aria-describedby="trabajo-form-note"
+        >
+          <div class="form-field form-wide"
+            ><label for="trabajo-name">Tu nombre <span>*</span></label
+            ><input
+              id="trabajo-name"
+              name="name"
+              type="text"
+              autocomplete="name"
+              maxlength="80"
+              required
+              placeholder="¿Cómo te llamas?"
+          /></div>
+          <div class="form-field"
+            ><label for="trabajo-service">Área de interés <span>*</span></label
+            ><select id="trabajo-service" name="service" required
+              ><option value="">¿Qué trabajo buscas?</option
+              ><option>Niñeras</option
+              ><option>Cuidado de adulto mayor</option
+              ><option>Cocina</option
+              ><option>Limpieza</option
+              ><option>Choferes</option
+              ><option>Ventas</option
+              ><option>Almacén y logística</option
+              ><option>Atención al cliente</option
+              ><option>Otro</option></select
+            ></div
+          >
+          <div class="form-field"
+            ><label for="trabajo-district">Distrito donde vives <span>*</span></label
+            ><input
+              id="trabajo-district"
+              name="district"
+              type="text"
+              maxlength="80"
+              required
+              placeholder="Ej. Santa Anita, Lima"
+          /></div>
+          <div class="form-field"
+            ><label for="trabajo-experience">Experiencia en el área <span>*</span></label
+            ><select id="trabajo-experience" name="experience" required
+              ><option value="">Selecciona una opción</option
+              ><option>Busco mi primera oportunidad</option
+              ><option>Menos de 1 año</option
+              ><option>Entre 1 y 3 años</option
+              ><option>Más de 3 años</option></select
+            ></div
+          >
+          <div class="form-field"
+            ><label for="trabajo-availability">Disponibilidad <span>(opcional)</span></label
+            ><select id="trabajo-availability" name="availability"
+              ><option value="">Selecciona una opción</option
+              ><option>Inmediata</option
+              ><option>En una semana</option
+              ><option>En dos semanas</option
+              ><option>Por coordinar</option></select
+            ></div
+          >
+          <div class="form-field form-wide"
+            ><label for="trabajo-details">Cuéntanos sobre ti <span>(opcional)</span></label
+            ><textarea
+              id="trabajo-details"
+              name="details"
+              rows="3"
+              maxlength="500"
+              placeholder="Puedes compartir las tareas que conoces, tus habilidades o los horarios que buscas."
+            ></textarea>
+          </div>
+          <p id="trabajo-form-note" class="form-note form-wide"
+            >* Campos obligatorios. Se abrirá WhatsApp con tus respuestas para que las revises y
+            envíes. Este formulario no guarda tus datos en la web.</p
+          >
+          <div class="form-wide form-submit"
+            ><button type="submit" class="button green" disabled
+              >Continuar en WhatsApp <span aria-hidden="true">↗</span></button
+            ></div
+          >
+          <div class="form-wide form-feedback"
+            ><p class="form-status" role="status" aria-live="polite"></p
+            ><a class="whatsapp-fallback" target="_blank" rel="noopener noreferrer" hidden
+              >Abrir WhatsApp con mi postulación ↗</a
+            ></div
+          >
+        </form>
+        <a
+          class="direct-whatsapp"
+          href="https://wa.me/51920385650?text=Hola%20NAYUMI%2C%20estoy%20buscando%20trabajo."
+          target="_blank"
+          rel="noopener noreferrer"
+          >Prefiero escribir directamente <span>920 385 650 ↗</span></a
+        >
+      </article>
+    </div>
+    <noscript
+      ><p class="no-js-forms"
+        >Para preparar un mensaje desde el formulario, activa JavaScript. También puedes usar los
+        enlaces “Prefiero escribir directamente”.</p
+      ></noscript
+    >
+  </div>
+</section>
