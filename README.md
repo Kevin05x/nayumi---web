@@ -34,7 +34,10 @@ HTML, CSS, JavaScript modular, Node.js, Playwright y Prettier.
 
 - `src/`: Contiene el documento principal (`layout.html`), los componentes modulares de la interfaz, los scripts de interactividad y las hojas de estilos.
 - `public/assets/`: Recursos estáticos que incluyen imágenes optimizadas, vectores de iconos, tipografías y el logo SVG provisional.
-- `scripts/`: Herramientas de soporte para la compilación estática (`build.js`) y el servidor local de desarrollo (`dev-server.js`).
+- `scripts/`:
+  - `scripts/build.mjs`: compone y verifica la web, generando dist/.
+  - `scripts/dev.mjs`: reconstruye automáticamente durante el desarrollo local.
+  - `scripts/serve.mjs`: sirve la carpeta dist/ para vista previa.
 - `tests/`: Batería de pruebas automatizadas que cubren la lógica de contacto, validación de estados y pruebas de extremo a extremo (E2E) con Playwright.
 - `docs/`: Documentación técnica del proyecto, planes de trabajo, arquitectura y reportes de pruebas.
 
