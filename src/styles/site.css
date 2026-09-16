@@ -604,7 +604,7 @@ p {
 .home-card > img.left-object {
   right: -17%;
   width: 83%;
-  object-position: 15% center;
+  object-position: 73% 18%;
   mask-image: linear-gradient(90deg, transparent, #000 15%);
 }
 .home-card:after {
@@ -1966,7 +1966,7 @@ details p {
     right: -13%;
     width: 115%;
     height: 65%;
-    object-position: 30% center;
+    object-position: 73% 18%;
     mask-image: linear-gradient(0deg, #000 72%, transparent 100%);
   }
   .home-card:after {
