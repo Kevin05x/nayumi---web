@@ -42,7 +42,7 @@ export async function build() {
   if (assets.filter((entry) => entry.name.endsWith('.webp')).length !== 12)
     throw new Error('Faltan imágenes aprobadas');
   for (const entry of assets) {
-    if (!entry.isFile() || !/^[\w-]+\.(webp|svg|ttf|txt)$/.test(entry.name))
+    if (!entry.isFile() || !/^[\w-]+\.(webp|png|svg|ttf|txt)$/.test(entry.name))
       throw new Error('Recurso no previsto: ' + entry.name);
     files.set('assets/' + entry.name, null);
   }

@@ -24,7 +24,7 @@
   height: 320px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #e8e7df;
+  background: #e2e8f0;
 }
 .office-map > p {
   font-size: 12px;
@@ -61,11 +61,11 @@
 .form-field label {
   font-size: 14px;
   line-height: 1.4;
-  color: #e6ece2;
+  color: #ffffff;
 }
 .form-field label span {
   font-size: 12px;
-  color: #a8b8bc;
+  color: #9bb8d7;
 }
 .form-field input,
 .form-field select,
@@ -73,10 +73,10 @@
   display: block;
   width: 100%;
   min-height: 50px;
-  border: 1px solid #b9cbd14d;
+  border: 1px solid rgba(9, 38, 75, 0.18);
   border-radius: 5px;
-  background: #122736;
-  color: #f7f4ee;
+  background: #ffffff;
+  color: #09264b;
   font: 400 16px/1.5 var(--sans);
   padding: 12px 14px;
   transition:
@@ -89,8 +89,8 @@
   cursor: pointer;
 }
 .form-field select option {
-  background: #122736;
-  color: #f7f4ee;
+  background: #ffffff;
+  color: #09264b;
 }
 .form-field textarea {
   resize: vertical;
@@ -99,30 +99,30 @@
 }
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: #a6b9c1;
+  color: #526579;
   opacity: 1;
   font-size: 14px;
 }
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-  border-color: #c6d7dc88;
+  border-color: var(--blue);
 }
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  outline: 2px solid #a4cba0;
+  outline: 2px solid var(--blue);
   outline-offset: 2px;
   border-color: transparent;
-  background: #172f3f;
+  background: #ffffff;
 }
 .form-field :user-invalid {
-  border-color: #efb4a6;
+  border-color: #ef4444;
 }
 .contact .form-note {
   font-size: 12px;
   line-height: 1.65;
-  color: #aabdc5;
+  color: #9bb8d7;
   margin: 0;
 }
 .form-submit {
@@ -144,12 +144,12 @@
 .contact .form-status {
   font-size: 13px;
   line-height: 1.6;
-  color: #c6dbb7;
+  color: #4ade80;
   margin: 0 0 8px;
 }
 .whatsapp-fallback {
   font-size: 14px;
-  color: #e5efdc;
+  color: var(--sky);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -162,15 +162,15 @@
   align-items: center;
   gap: 12px;
   font-size: 12px;
-  color: #bfd0d5;
-  border-top: 1px solid #a7babc2b;
+  color: #9bb8d7;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   margin-top: 22px;
   padding-top: 18px;
 }
 .direct-whatsapp span {
   white-space: nowrap;
   font-size: 13px;
-  color: #edf0e8;
+  color: #ffffff;
 }
 .direct-whatsapp:hover {
   text-decoration: underline;
@@ -179,7 +179,7 @@
 .no-js-forms {
   font-size: 14px;
   margin-top: 25px;
-  color: #d4dfd7;
+  color: #c2d5ea;
 }
 .contact-image {
   height: 650px;
@@ -187,8 +187,8 @@
 }
 .contact-shade {
   background:
-    linear-gradient(90deg, #081623, transparent 80%),
-    linear-gradient(0deg, #081623 0%, #081623 45%, transparent 85%);
+    linear-gradient(90deg, #071a38, transparent 80%),
+    linear-gradient(0deg, #071a38 0%, #071a38 45%, transparent 85%);
 }
 @media (max-width: 1000px) {
   .contact-with-forms {
@@ -254,8 +254,8 @@
   }
   .contact-shade {
     background:
-      linear-gradient(0deg, #081623 65%, transparent 100%),
-      linear-gradient(90deg, #08162370, transparent);
+      linear-gradient(0deg, #071a38 65%, transparent 100%),
+      linear-gradient(90deg, rgba(7, 26, 56, 0.7), transparent);
   }
 }
 /* Client reference: contained dark cards, soft fields and pill-shaped actions. */
@@ -265,10 +265,10 @@
 }
 .contact-with-forms > article {
   padding: 36px 32px 28px;
-  background: #121c24;
-  border: 1px solid #d5e2dd24;
+  background: #0b1e3b;
+  border: 1px solid rgba(70, 189, 242, 0.22);
   border-radius: 26px;
-  box-shadow: 0 20px 60px #02070d20;
+  box-shadow: 0 20px 60px rgba(2, 10, 25, 0.35);
   display: flex;
   flex-direction: column;
 }
@@ -287,7 +287,7 @@
   line-height: 1.65;
   min-height: 48px;
   margin-bottom: 0;
-  color: #b6c4ca;
+  color: #b5cce5;
 }
 .whatsapp-form {
   column-gap: 18px;
@@ -299,22 +299,23 @@
 .form-field select,
 .form-field textarea {
   border-radius: 17px;
-  background: #091118;
-  border: 1px solid #d5e2dd33;
+  background: #ffffff;
+  border: 1px solid rgba(9, 38, 75, 0.18);
   padding: 12px 15px;
   min-height: 49px;
+  color: #09264b;
 }
 .form-field input:hover,
 .form-field select:hover,
 .form-field textarea:hover {
-  background: #0c1720;
-  border-color: #d5e2dd66;
+  background: #ffffff;
+  border-color: var(--blue);
 }
 .form-field input:focus,
 .form-field select:focus,
 .form-field textarea:focus {
-  background: #0c1720;
-  outline-color: #9bbd8b;
+  background: #ffffff;
+  outline-color: var(--blue);
 }
 .form-field textarea {
   min-height: 128px;
@@ -323,12 +324,13 @@
 .form-field select {
   appearance: none;
   padding-right: 35px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath d='m4 6 4 4 4-4' stroke='%23bdccc9' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none'%3E%3Cpath d='m4 6 4 4 4-4' stroke='%2309264b' stroke-width='1.5'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
 }
 .form-field select option {
-  background: #101c24;
+  background: #ffffff;
+  color: #09264b;
 }
 .form-field label {
   font-size: 14px;
@@ -340,11 +342,11 @@
 }
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: #93a6b0;
+  color: #526579;
 }
 .contact .form-note {
   font-size: 12px;
-  color: #aebdc3;
+  color: #9bb8d7;
 }
 .form-submit {
   display: flex;
@@ -364,22 +366,23 @@
   white-space: normal;
 }
 .form-submit .button.blue {
-  background: #f3f2e9;
-  color: #122735;
+  background: var(--blue);
+  color: #ffffff;
 }
 .form-submit .button.blue:hover {
-  background: #fffef6;
-  box-shadow: 0 8px 25px #0002;
+  background: #007bc7;
+  box-shadow: 0 8px 25px rgba(0, 143, 232, 0.35);
 }
 .form-submit .button.green {
-  background: #b6cca2;
-  color: #182a19;
+  background: var(--green);
+  color: #ffffff;
 }
 .form-submit .button.green:hover {
-  background: #ccdfbb;
+  background: #158037;
+  box-shadow: 0 8px 25px rgba(27, 154, 67, 0.35);
 }
 .form-submit .button:focus-visible {
-  outline-color: #b6cca2;
+  outline-color: var(--sky);
 }
 .direct-whatsapp {
   margin-top: 24px;
