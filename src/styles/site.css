@@ -2104,15 +2104,13 @@ details p {
     width: 85px;
   }
   .beliefs {
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 14px;
     margin-top: 20px;
     padding-top: 20px;
   }
   .beliefs > span {
-    font-size: 21px;
-  }
-  .beliefs i {
-    font-size: 8px;
+    font-size: 22px;
   }
   .process .split-heading {
     margin-bottom: 40px;
@@ -2712,6 +2710,14 @@ summary {
   flex-wrap: wrap;
   gap: 6px;
   overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .beliefs {
+    grid-template-columns: 1fr;
+  }
+  .beliefs > span {
+    overflow-wrap: normal;
+  }
 }
 .text-link {
   max-width: 100%;
