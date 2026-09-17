@@ -195,10 +195,10 @@ export function initMotion() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
+          // Toggling both ways (instead of unobserving after the first reveal) lets each
+          // element replay its entrance animation every time it re-enters the viewport,
+          // whether the visitor is scrolling down or back up.
+          entry.target.classList.toggle('is-visible', entry.isIntersecting);
         });
       },
       { threshold: 0.09, rootMargin: '0px 0px -20px 0px' },

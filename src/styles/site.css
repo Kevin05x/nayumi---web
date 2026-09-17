@@ -347,6 +347,23 @@ p {
   margin-left: 24px;
   font-size: 20px;
 }
+.brand,
+.desktop-nav a,
+.header-contact {
+  animation: top-in 0.7s var(--ease) both;
+}
+.desktop-nav a:nth-child(1) {
+  animation-delay: 0.06s;
+}
+.desktop-nav a:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.desktop-nav a:nth-child(3) {
+  animation-delay: 0.18s;
+}
+.header-contact {
+  animation-delay: 0.24s;
+}
 .menu-toggle {
   display: none;
 }
@@ -446,8 +463,7 @@ p {
   letter-spacing: -0.055em;
 }
 .hero-line {
-  display: block;
-  animation: line-in 1.2s var(--ease) both;
+  animation: side-in 1.1s var(--ease) both;
 }
 .hero-line:nth-child(2) {
   animation-delay: 0.14s;
@@ -455,8 +471,31 @@ p {
 .hero-line:nth-child(3) {
   animation-delay: 0.28s;
 }
+.hero-line:nth-child(4) {
+  animation-delay: 0.42s;
+}
+.hero-line:nth-child(5) {
+  animation-delay: 0.56s;
+}
+.hero-line:nth-child(6) {
+  animation-delay: 0.7s;
+}
 .hero h1 em {
   color: var(--fuchsia);
+  background-image: linear-gradient(
+    180deg,
+    var(--fuchsia) 0%,
+    var(--fuchsia) 38%,
+    #ffe6f2 50%,
+    var(--fuchsia) 62%,
+    var(--fuchsia) 100%
+  );
+  background-size: 100% 320%;
+  background-position: 0 0%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: nayumi-shine 6s ease-in-out infinite;
 }
 .hero-description {
   margin-top: 29px;
@@ -470,7 +509,10 @@ p {
   margin-top: 29px;
 }
 .hero-enter {
-  animation: line-in 1.25s 0.45s var(--ease) both;
+  animation: side-in 1.1s 0.82s var(--ease) both;
+}
+.hero-bottom {
+  animation: side-in 1.1s 0.95s var(--ease) both;
 }
 .hero-note {
   position: absolute;
@@ -1439,6 +1481,40 @@ details p {
     transform: none;
   }
 }
+@keyframes top-in {
+  from {
+    opacity: 0;
+    transform: translateY(-22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes side-in {
+  from {
+    opacity: 0;
+    transform: translateX(46px);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+@keyframes nayumi-shine {
+  0%,
+  78% {
+    background-position: 0 0%;
+  }
+  88% {
+    background-position: 0 100%;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
 @media (min-width: 1650px) {
   .hero-art img {
     right: 0;
@@ -2368,10 +2444,20 @@ html.reduced-motion {
   top: auto;
 }
 .reduced-motion .hero-line,
-.reduced-motion .hero-enter {
+.reduced-motion .hero-enter,
+.reduced-motion .hero-bottom {
   opacity: 1;
   filter: none;
   transform: none;
+}
+.reduced-motion .brand,
+.reduced-motion .desktop-nav a,
+.reduced-motion .header-contact {
+  opacity: 1;
+  transform: none;
+}
+.reduced-motion .hero h1 em {
+  background-position: 0 0% !important;
 }
 @media (prefers-reduced-motion: reduce) {
   html {
