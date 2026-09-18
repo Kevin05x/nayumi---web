@@ -5,7 +5,6 @@ export function initMotion() {
   const hero = document.querySelector('.hero');
   const heroArt = document.querySelector('.hero-art');
   const progress = document.querySelector('.reading-progress');
-  const motionButton = document.querySelector('.motion-toggle');
   const systemMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const narrow = window.matchMedia('(max-width: 600px)');
   let userMotion = null;
@@ -160,29 +159,9 @@ export function initMotion() {
   function applyMotion() {
     root.classList.toggle('reduced-motion', reduced);
     root.classList.toggle('js-motion', !reduced);
-    motionButton.setAttribute('aria-pressed', String(reduced));
-    motionButton.setAttribute(
-      'aria-label',
-      reduced ? 'Activar animaciones' : 'Reducir animaciones',
-    );
-    motionButton.title = reduced ? 'Activar animaciones' : 'Reducir animaciones';
-    motionButton.querySelector('.motion-symbol').textContent = reduced ? '▷' : 'Ⅱ';
-    motionButton.querySelector('.motion-label').textContent = reduced
-      ? 'Sin movimiento'
-      : 'Movimiento';
     measureStack();
     updateScroll();
   }
-  motionButton.addEventListener('click', () => {
-    reduced = !reduced;
-    userMotion = reduced ? 'reduced' : 'full';
-    try {
-      localStorage.setItem('nayumi-motion', userMotion);
-    } catch {
-      /* optional preference */
-    }
-    applyMotion();
-  });
   systemMotion.addEventListener('change', () => {
     if (userMotion === null) {
       reduced = systemMotion.matches;

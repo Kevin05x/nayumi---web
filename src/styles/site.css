@@ -395,10 +395,10 @@ p {
   max-width: none;
   height: 100%;
   object-fit: cover;
-  object-position: 55% 35%;
+  object-position: 66% 30%;
   right: 0;
   top: 0;
-  mask-image: linear-gradient(90deg, transparent 0%, #000 25%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 36%, #000 100%);
   opacity: 0.93;
 }
 .hero-art:after {
@@ -406,7 +406,7 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, var(--bg-main) 2%, rgba(244, 247, 251, 0.9) 22%, transparent 65%),
+    linear-gradient(90deg, var(--bg-main) 2%, rgba(244, 247, 251, 0.92) 34%, transparent 76%),
     linear-gradient(0deg, var(--bg-main) 0%, transparent 24%);
 }
 .hero-glow {
@@ -522,6 +522,187 @@ p {
   .hero-blob-c,
   .hero-blob-d {
     display: none;
+  }
+}
+
+/* Burbujas de fondo reutilizadas en el resto de secciones, mismo criterio del hero:
+   se deforman solas muy lento y desincronizadas, para que las secciones no se vean vacías
+   (pedido del cliente, sept. 2026). Van detrás de todo el contenido de cada sección
+   (z-index: -1 dentro de su propio contexto de apilamiento, por eso cada sección
+   ahora tiene position: relative; z-index: 0;). */
+.section-blobs {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.section-blob {
+  position: absolute;
+  will-change: transform, border-radius;
+}
+.reduced-motion .section-blob {
+  animation: none !important;
+}
+
+.about-blob-a {
+  width: 320px;
+  height: 300px;
+  top: -100px;
+  right: -110px;
+  background: var(--bg-alt);
+  animation: hero-blob-a 19s ease-in-out infinite;
+  animation-delay: -4s;
+}
+.about-blob-b {
+  width: 240px;
+  height: 220px;
+  bottom: -90px;
+  left: -70px;
+  background: var(--bg-soft-green);
+  opacity: 0.85;
+  animation: hero-blob-b 23s ease-in-out infinite;
+  animation-delay: -11s;
+}
+
+.services-blob-a {
+  width: 300px;
+  height: 280px;
+  top: -110px;
+  left: -100px;
+  background: var(--bg-soft-green-deep);
+  animation: hero-blob-b 20s ease-in-out infinite;
+  animation-delay: -6s;
+}
+.services-blob-b {
+  width: 260px;
+  height: 240px;
+  bottom: -100px;
+  right: -90px;
+  background: #fbe4ee;
+  opacity: 0.85;
+  animation: hero-blob-a 16s ease-in-out infinite;
+  animation-delay: -2s;
+}
+
+.process-blob-a {
+  width: 280px;
+  height: 260px;
+  top: -90px;
+  right: -80px;
+  background: var(--bg-soft-green);
+  animation: hero-blob-a 22s ease-in-out infinite;
+  animation-delay: -8s;
+}
+.process-blob-b {
+  width: 220px;
+  height: 200px;
+  bottom: -80px;
+  left: -60px;
+  background: var(--bg-alt);
+  opacity: 0.85;
+  animation: hero-blob-b 15s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+.difference-blob-a {
+  width: 300px;
+  height: 280px;
+  top: -100px;
+  left: -90px;
+  background: rgba(255, 255, 255, 0.4);
+  animation: hero-blob-a 18s ease-in-out infinite;
+  animation-delay: -9s;
+}
+.difference-blob-b {
+  width: 240px;
+  height: 220px;
+  bottom: -90px;
+  right: -80px;
+  background: var(--bg-soft-green);
+  opacity: 0.5;
+  animation: hero-blob-b 24s ease-in-out infinite;
+  animation-delay: -1s;
+}
+
+.purpose-blob-a {
+  width: 280px;
+  height: 260px;
+  top: -90px;
+  left: -90px;
+  background: #fbe4ee;
+  animation: hero-blob-b 17s ease-in-out infinite;
+  animation-delay: -7s;
+}
+.purpose-blob-b {
+  width: 220px;
+  height: 200px;
+  bottom: -80px;
+  right: -70px;
+  background: var(--bg-alt);
+  opacity: 0.85;
+  animation: hero-blob-a 21s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+.office-blob-a {
+  width: 300px;
+  height: 280px;
+  top: -100px;
+  right: -100px;
+  background: var(--bg-soft-green-deep);
+  animation: hero-blob-a 20s ease-in-out infinite;
+  animation-delay: -10s;
+}
+.office-blob-b {
+  width: 230px;
+  height: 210px;
+  bottom: -80px;
+  left: -70px;
+  background: var(--bg-soft-green);
+  opacity: 0.85;
+  animation: hero-blob-b 14s ease-in-out infinite;
+  animation-delay: -6s;
+}
+
+.contact-blob-a {
+  width: 260px;
+  height: 240px;
+  bottom: -90px;
+  left: -80px;
+  background: var(--bg-soft-green);
+  opacity: 0.5;
+  animation: hero-blob-a 23s ease-in-out infinite;
+  animation-delay: -12s;
+}
+.contact-blob-b {
+  width: 200px;
+  height: 190px;
+  top: -70px;
+  left: 20%;
+  background: var(--bg-alt);
+  opacity: 0.4;
+  animation: hero-blob-b 19s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+@media (max-width: 600px) {
+  .about-blob-a,
+  .about-blob-b,
+  .services-blob-a,
+  .services-blob-b,
+  .process-blob-a,
+  .process-blob-b,
+  .difference-blob-a,
+  .difference-blob-b,
+  .purpose-blob-a,
+  .purpose-blob-b,
+  .office-blob-a,
+  .office-blob-b,
+  .contact-blob-a,
+  .contact-blob-b {
+    width: 160px;
+    height: 150px;
   }
 }
 .hero-content {
@@ -686,6 +867,7 @@ p {
 .services {
   position: relative;
   z-index: 4;
+  overflow: hidden;
   background: var(--bg-main);
   border-radius: 20px 20px 0 0;
   margin-top: -18px;
@@ -956,6 +1138,9 @@ p {
   margin-left: 15px;
 }
 .about {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   border-top: 1px solid var(--line);
   background: var(--bg-main);
 }
@@ -1041,6 +1226,9 @@ p {
   color: var(--muted);
 }
 .process {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   background: var(--bg-main);
 }
 .process .split-heading {
@@ -1109,6 +1297,8 @@ p {
   transition-delay: 0.48s;
 }
 .difference {
+  position: relative;
+  z-index: 0;
   background: #cfe6f8;
   overflow: hidden;
 }
@@ -1214,6 +1404,9 @@ p {
   letter-spacing: 0.12em;
 }
 .purpose {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   background: var(--bg-main);
   padding-bottom: 70px;
 }
@@ -1340,6 +1533,9 @@ details p {
   font-size: 25px;
 }
 .office {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
   padding-top: 90px;
   background: var(--bg-main);
 }
@@ -1411,6 +1607,7 @@ details p {
 }
 .contact {
   position: relative;
+  z-index: 0;
   background: var(--bg-main);
   color: var(--dark);
   overflow: hidden;
@@ -1423,7 +1620,7 @@ details p {
   width: 80%;
   height: 75%;
   object-fit: cover;
-  object-position: center;
+  object-position: 65% 20%;
   opacity: 0.52;
 }
 .contact-shade {
@@ -1519,29 +1716,6 @@ details p {
   gap: 20px;
   font-size: 10px;
   color: var(--muted);
-}
-.motion-toggle {
-  position: fixed;
-  z-index: 90;
-  right: 20px;
-  bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.94);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 25px;
-  box-shadow: 0 3px 12px rgba(7, 26, 56, 0.08);
-  padding: 8px 14px;
-  min-height: 44px;
-  backdrop-filter: blur(10px);
-}
-.motion-symbol {
-  font-size: 16px;
-}
-.motion-label {
-  font-size: 10px;
 }
 .js-motion .reveal {
   opacity: 0;
@@ -2439,12 +2613,12 @@ details p {
     right: -45%;
     height: 45%;
     opacity: 0.4;
-    object-position: 55% center;
+    object-position: 65% 15%;
   }
   .contact-shade {
     background:
-      linear-gradient(0deg, #071a38 40%, transparent 100%),
-      linear-gradient(90deg, rgba(7, 26, 56, 0.44), transparent);
+      linear-gradient(0deg, var(--bg-main) 40%, transparent 100%),
+      linear-gradient(90deg, rgba(244, 247, 251, 0.7), transparent);
   }
   .contact .eyebrow {
     font-size: 9px;
@@ -2503,14 +2677,6 @@ details p {
   }
   .footer-bottom > span:first-child {
     width: 100%;
-  }
-  .motion-toggle {
-    right: 12px;
-    bottom: 12px;
-    min-height: 42px;
-  }
-  .motion-label {
-    font-size: 9px;
   }
 }
 @media (max-width: 370px) {
@@ -2793,9 +2959,6 @@ html.reduced-motion {
 .steps p {
   font-size: 14px;
 }
-.motion-label {
-  font-size: 12px;
-}
 .card-stamp {
   font-size: 10px;
 }
@@ -2873,9 +3036,6 @@ html.reduced-motion {
     font-size: 12px;
   }
   .footer-top > p {
-    font-size: 12px;
-  }
-  .motion-label {
     font-size: 12px;
   }
   .is-active .panel-title {
