@@ -249,8 +249,8 @@
     gap: 8px;
   }
   .contact-image {
-    height: 460px;
-    max-height: 30%;
+    height: 300px;
+    max-height: 24%;
   }
   .contact-shade {
     background:
@@ -265,7 +265,7 @@
 }
 .contact-with-forms > article {
   padding: 36px 32px 28px;
-  background: #0b1e3b;
+  background: #16305a;
   color: var(--cream);
   border: 1px solid rgba(70, 189, 242, 0.22);
   border-radius: 26px;

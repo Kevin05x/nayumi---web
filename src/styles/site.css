@@ -438,6 +438,7 @@ p {
 }
 .hero-blob {
   position: absolute;
+  filter: blur(1.5px);
   will-change: transform, border-radius;
 }
 @keyframes hero-blob-a {
@@ -529,7 +530,10 @@ p {
    se deforman solas muy lento y desincronizadas, para que las secciones no se vean vacías
    (pedido del cliente, sept. 2026). Van detrás de todo el contenido de cada sección
    (z-index: -1 dentro de su propio contexto de apilamiento, por eso cada sección
-   ahora tiene position: relative; z-index: 0;). */
+   ahora tiene position: relative; z-index: 0;). Cada sección tiene 3 burbujas: dos
+   asomando desde una esquina y una tercera "flotante" en una posición intermedia,
+   para que no se vean siempre en el mismo lugar. Bordes suavizados con blur para que
+   se lean como manchas orgánicas y no como formas geométricas. */
 .section-blobs {
   position: absolute;
   inset: 0;
@@ -539,15 +543,54 @@ p {
 }
 .section-blob {
   position: absolute;
+  filter: blur(1.5px);
   will-change: transform, border-radius;
 }
 .reduced-motion .section-blob {
   animation: none !important;
 }
+@keyframes blob-morph-c {
+  0%,
+  100% {
+    border-radius: 48% 52% 60% 40% / 55% 48% 52% 45%;
+    transform: scale(1) translate(0, 0) rotate(0deg);
+  }
+  30% {
+    border-radius: 60% 40% 45% 55% / 42% 58% 42% 58%;
+    transform: scale(1.1) translate(14px, 12px) rotate(6deg);
+  }
+  62% {
+    border-radius: 40% 60% 58% 42% / 60% 45% 55% 40%;
+    transform: scale(0.92) translate(-12px, -6px) rotate(-4deg);
+  }
+  85% {
+    border-radius: 55% 45% 50% 50% / 45% 55% 42% 58%;
+    transform: scale(1.04) translate(6px, -14px) rotate(3deg);
+  }
+}
+@keyframes blob-morph-d {
+  0%,
+  100% {
+    border-radius: 50% 50% 45% 55% / 50% 45% 55% 50%;
+    transform: scale(1) translate(0, 0) rotate(0deg);
+  }
+  28% {
+    border-radius: 40% 60% 55% 45% / 60% 50% 50% 40%;
+    transform: scale(1.08) translate(-14px, 10px) rotate(-5deg);
+  }
+  58% {
+    border-radius: 58% 42% 50% 50% / 45% 55% 45% 55%;
+    transform: scale(0.94) translate(10px, -12px) rotate(4deg);
+  }
+  82% {
+    border-radius: 45% 55% 60% 40% / 55% 40% 60% 45%;
+    transform: scale(1.05) translate(-8px, -6px) rotate(-3deg);
+  }
+}
 
 .about-blob-a {
-  width: 320px;
-  height: 300px;
+  width: 360px;
+  height: 335px;
   top: -100px;
   right: -110px;
   background: var(--bg-alt);
@@ -555,8 +598,8 @@ p {
   animation-delay: -4s;
 }
 .about-blob-b {
-  width: 240px;
-  height: 220px;
+  width: 270px;
+  height: 250px;
   bottom: -90px;
   left: -70px;
   background: var(--bg-soft-green);
@@ -564,10 +607,20 @@ p {
   animation: hero-blob-b 23s ease-in-out infinite;
   animation-delay: -11s;
 }
+.about-blob-c {
+  width: 190px;
+  height: 175px;
+  top: 38%;
+  left: 44%;
+  background: #fbe4ee;
+  opacity: 0.7;
+  animation: blob-morph-c 16s ease-in-out infinite;
+  animation-delay: -6s;
+}
 
 .services-blob-a {
-  width: 300px;
-  height: 280px;
+  width: 340px;
+  height: 315px;
   top: -110px;
   left: -100px;
   background: var(--bg-soft-green-deep);
@@ -575,8 +628,8 @@ p {
   animation-delay: -6s;
 }
 .services-blob-b {
-  width: 260px;
-  height: 240px;
+  width: 290px;
+  height: 270px;
   bottom: -100px;
   right: -90px;
   background: #fbe4ee;
@@ -584,10 +637,20 @@ p {
   animation: hero-blob-a 16s ease-in-out infinite;
   animation-delay: -2s;
 }
+.services-blob-c {
+  width: 175px;
+  height: 165px;
+  top: 30%;
+  left: 8%;
+  background: var(--bg-alt);
+  opacity: 0.6;
+  animation: blob-morph-d 19s ease-in-out infinite;
+  animation-delay: -13s;
+}
 
 .process-blob-a {
-  width: 280px;
-  height: 260px;
+  width: 320px;
+  height: 295px;
   top: -90px;
   right: -80px;
   background: var(--bg-soft-green);
@@ -595,8 +658,8 @@ p {
   animation-delay: -8s;
 }
 .process-blob-b {
-  width: 220px;
-  height: 200px;
+  width: 250px;
+  height: 230px;
   bottom: -80px;
   left: -60px;
   background: var(--bg-alt);
@@ -604,30 +667,49 @@ p {
   animation: hero-blob-b 15s ease-in-out infinite;
   animation-delay: -5s;
 }
+.process-blob-c {
+  width: 170px;
+  height: 160px;
+  bottom: 16%;
+  right: 30%;
+  background: #fbe4ee;
+  opacity: 0.65;
+  animation: blob-morph-c 14s ease-in-out infinite;
+  animation-delay: -2s;
+}
 
 .difference-blob-a {
-  width: 300px;
-  height: 280px;
+  width: 340px;
+  height: 315px;
   top: -100px;
   left: -90px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.45);
   animation: hero-blob-a 18s ease-in-out infinite;
   animation-delay: -9s;
 }
 .difference-blob-b {
-  width: 240px;
-  height: 220px;
+  width: 270px;
+  height: 250px;
   bottom: -90px;
   right: -80px;
   background: var(--bg-soft-green);
-  opacity: 0.5;
+  opacity: 0.65;
   animation: hero-blob-b 24s ease-in-out infinite;
   animation-delay: -1s;
 }
+.difference-blob-c {
+  width: 190px;
+  height: 175px;
+  top: 34%;
+  right: 12%;
+  background: rgba(255, 255, 255, 0.55);
+  animation: blob-morph-d 17s ease-in-out infinite;
+  animation-delay: -10s;
+}
 
 .purpose-blob-a {
-  width: 280px;
-  height: 260px;
+  width: 320px;
+  height: 295px;
   top: -90px;
   left: -90px;
   background: #fbe4ee;
@@ -635,8 +717,8 @@ p {
   animation-delay: -7s;
 }
 .purpose-blob-b {
-  width: 220px;
-  height: 200px;
+  width: 250px;
+  height: 230px;
   bottom: -80px;
   right: -70px;
   background: var(--bg-alt);
@@ -644,10 +726,20 @@ p {
   animation: hero-blob-a 21s ease-in-out infinite;
   animation-delay: -3s;
 }
+.purpose-blob-c {
+  width: 175px;
+  height: 165px;
+  bottom: 22%;
+  left: 30%;
+  background: var(--bg-soft-green);
+  opacity: 0.6;
+  animation: blob-morph-c 20s ease-in-out infinite;
+  animation-delay: -15s;
+}
 
 .office-blob-a {
-  width: 300px;
-  height: 280px;
+  width: 340px;
+  height: 315px;
   top: -100px;
   right: -100px;
   background: var(--bg-soft-green-deep);
@@ -655,8 +747,8 @@ p {
   animation-delay: -10s;
 }
 .office-blob-b {
-  width: 230px;
-  height: 210px;
+  width: 260px;
+  height: 240px;
   bottom: -80px;
   left: -70px;
   background: var(--bg-soft-green);
@@ -664,26 +756,46 @@ p {
   animation: hero-blob-b 14s ease-in-out infinite;
   animation-delay: -6s;
 }
+.office-blob-c {
+  width: 180px;
+  height: 170px;
+  top: 40%;
+  left: 40%;
+  background: #fbe4ee;
+  opacity: 0.6;
+  animation: blob-morph-d 15s ease-in-out infinite;
+  animation-delay: -4s;
+}
 
 .contact-blob-a {
-  width: 260px;
-  height: 240px;
+  width: 300px;
+  height: 275px;
   bottom: -90px;
   left: -80px;
   background: var(--bg-soft-green);
-  opacity: 0.5;
+  opacity: 0.62;
   animation: hero-blob-a 23s ease-in-out infinite;
   animation-delay: -12s;
 }
 .contact-blob-b {
-  width: 200px;
-  height: 190px;
+  width: 230px;
+  height: 215px;
   top: -70px;
   left: 20%;
   background: var(--bg-alt);
-  opacity: 0.4;
+  opacity: 0.55;
   animation: hero-blob-b 19s ease-in-out infinite;
   animation-delay: -4s;
+}
+.contact-blob-c {
+  width: 170px;
+  height: 160px;
+  top: 46%;
+  left: 6%;
+  background: #fbe4ee;
+  opacity: 0.45;
+  animation: blob-morph-c 21s ease-in-out infinite;
+  animation-delay: -9s;
 }
 
 @media (max-width: 600px) {
@@ -701,10 +813,20 @@ p {
   .office-blob-b,
   .contact-blob-a,
   .contact-blob-b {
-    width: 160px;
-    height: 150px;
+    width: 180px;
+    height: 170px;
+  }
+  .about-blob-c,
+  .services-blob-c,
+  .process-blob-c,
+  .difference-blob-c,
+  .purpose-blob-c,
+  .office-blob-c,
+  .contact-blob-c {
+    display: none;
   }
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -867,7 +989,6 @@ p {
 .services {
   position: relative;
   z-index: 4;
-  overflow: hidden;
   background: var(--bg-main);
   border-radius: 20px 20px 0 0;
   margin-top: -18px;
@@ -1140,7 +1261,6 @@ p {
 .about {
   position: relative;
   z-index: 0;
-  overflow: hidden;
   border-top: 1px solid var(--line);
   background: var(--bg-main);
 }
@@ -1228,7 +1348,6 @@ p {
 .process {
   position: relative;
   z-index: 0;
-  overflow: hidden;
   background: var(--bg-main);
 }
 .process .split-heading {
@@ -1406,7 +1525,6 @@ p {
 .purpose {
   position: relative;
   z-index: 0;
-  overflow: hidden;
   background: var(--bg-main);
   padding-bottom: 70px;
 }
@@ -1535,7 +1653,6 @@ details p {
 .office {
   position: relative;
   z-index: 0;
-  overflow: hidden;
   padding-top: 90px;
   background: var(--bg-main);
 }
@@ -2088,6 +2205,11 @@ details p {
   .footer-top > p {
     margin-left: 0;
   }
+  .contact-image {
+    width: 90%;
+    right: 0;
+    object-position: 78% 22%;
+  }
 }
 @media (max-width: 600px) {
   html {
@@ -2609,11 +2731,11 @@ details p {
     padding-block: 70px;
   }
   .contact-image {
-    width: 150%;
-    right: -45%;
+    width: 100%;
+    right: 0;
     height: 45%;
     opacity: 0.4;
-    object-position: 65% 15%;
+    object-position: 80% 25%;
   }
   .contact-shade {
     background:
@@ -3309,7 +3431,7 @@ html:not(.js-values) .depth-controls {
     max-width: 620px;
   }
   .hero-art img {
-    opacity: 0.5;
+    opacity: 0.82;
   }
   .agency-intro .about-layout {
     gap: 25px;
@@ -3353,7 +3475,7 @@ html:not(.js-values) .depth-controls {
     width: fit-content;
   }
   .hero-art img {
-    opacity: 0.48;
+    opacity: 0.85;
   }
   .hero-bottom {
     flex-wrap: wrap;
