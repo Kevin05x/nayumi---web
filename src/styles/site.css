@@ -556,30 +556,30 @@ p {
 }
 
 .about-blob-a {
-  width: 360px;
-  height: 335px;
-  top: 50px;
-  right: 55px;
+  width: 150px;
+  height: 90px;
+  top: 14px;
+  right: 18px;
   background: var(--blue);
   opacity: 0.4;
   animation: hero-blob-a 15s ease-in-out infinite;
   animation-delay: -4s;
 }
 .about-blob-b {
-  width: 270px;
-  height: 250px;
-  bottom: 45px;
-  left: 40px;
+  width: 100px;
+  height: 55px;
+  bottom: 8px;
+  left: 18px;
   background: var(--green);
   opacity: 0.4;
   animation: hero-blob-b 17s ease-in-out infinite;
   animation-delay: -11s;
 }
 .about-blob-c {
-  width: 190px;
-  height: 175px;
-  top: 38%;
-  left: 44%;
+  width: 90px;
+  height: 50px;
+  bottom: 8px;
+  right: 18px;
   background: var(--fuchsia);
   opacity: 0.2;
   filter: blur(4px);
@@ -588,30 +588,30 @@ p {
 }
 
 .services-blob-a {
-  width: 340px;
-  height: 315px;
-  top: 55px;
-  left: 50px;
+  width: 140px;
+  height: 80px;
+  top: 14px;
+  left: 18px;
   background: var(--green);
   opacity: 0.42;
   animation: hero-blob-b 15s ease-in-out infinite;
   animation-delay: -6s;
 }
 .services-blob-b {
-  width: 290px;
-  height: 270px;
-  bottom: 50px;
-  right: 45px;
+  width: 140px;
+  height: 85px;
+  top: 14px;
+  right: 18px;
   background: var(--fuchsia);
   opacity: 0.28;
   animation: hero-blob-a 12s ease-in-out infinite;
   animation-delay: -2s;
 }
 .services-blob-c {
-  width: 175px;
-  height: 165px;
-  top: 30%;
-  left: 8%;
+  width: 130px;
+  height: 80px;
+  bottom: 14px;
+  left: 18px;
   background: var(--sky);
   opacity: 0.22;
   filter: blur(4px);
@@ -620,30 +620,30 @@ p {
 }
 
 .process-blob-a {
-  width: 320px;
-  height: 295px;
-  top: 45px;
-  right: 40px;
+  width: 140px;
+  height: 85px;
+  top: 14px;
+  right: 18px;
   background: var(--sky);
   opacity: 0.42;
   animation: hero-blob-a 16s ease-in-out infinite;
   animation-delay: -8s;
 }
 .process-blob-b {
-  width: 250px;
-  height: 230px;
-  bottom: 40px;
-  left: 35px;
+  width: 120px;
+  height: 65px;
+  bottom: 10px;
+  left: 18px;
   background: var(--blue);
   opacity: 0.4;
   animation: hero-blob-b 11s ease-in-out infinite;
   animation-delay: -5s;
 }
 .process-blob-c {
-  width: 170px;
-  height: 160px;
-  bottom: 16%;
-  right: 30%;
+  width: 120px;
+  height: 65px;
+  top: 14px;
+  left: 18px;
   background: var(--fuchsia);
   opacity: 0.2;
   filter: blur(4px);
@@ -652,19 +652,19 @@ p {
 }
 
 .difference-blob-a {
-  width: 340px;
-  height: 315px;
-  top: 50px;
-  left: 45px;
+  width: 130px;
+  height: 75px;
+  top: 14px;
+  left: 18px;
   background: rgba(255, 255, 255, 0.5);
   animation: hero-blob-a 14s ease-in-out infinite;
   animation-delay: -9s;
 }
 .difference-blob-b {
-  width: 270px;
-  height: 250px;
-  bottom: 45px;
-  right: 40px;
+  width: 140px;
+  height: 80px;
+  bottom: 14px;
+  right: 18px;
   background: var(--green);
   opacity: 0.4;
   animation: hero-blob-b 18s ease-in-out infinite;
@@ -682,30 +682,30 @@ p {
 }
 
 .purpose-blob-a {
-  width: 320px;
-  height: 295px;
-  top: 45px;
-  left: 45px;
+  width: 120px;
+  height: 65px;
+  top: 14px;
+  left: 18px;
   background: var(--fuchsia);
   opacity: 0.3;
   animation: hero-blob-b 13s ease-in-out infinite;
   animation-delay: -7s;
 }
 .purpose-blob-b {
-  width: 250px;
-  height: 230px;
-  bottom: 40px;
-  right: 38px;
+  width: 140px;
+  height: 80px;
+  bottom: 14px;
+  right: 18px;
   background: var(--sky);
   opacity: 0.42;
   animation: hero-blob-a 16s ease-in-out infinite;
   animation-delay: -3s;
 }
 .purpose-blob-c {
-  width: 175px;
-  height: 165px;
-  bottom: 22%;
-  left: 30%;
+  width: 130px;
+  height: 75px;
+  top: 14px;
+  right: 18px;
   background: var(--blue);
   opacity: 0.22;
   filter: blur(4px);
@@ -714,30 +714,30 @@ p {
 }
 
 .office-blob-a {
-  width: 340px;
-  height: 315px;
-  top: 50px;
-  right: 50px;
+  width: 130px;
+  height: 75px;
+  top: 14px;
+  left: 18px;
   background: var(--blue);
   opacity: 0.4;
   animation: hero-blob-a 15s ease-in-out infinite;
   animation-delay: -10s;
 }
 .office-blob-b {
-  width: 260px;
-  height: 240px;
-  bottom: 40px;
-  left: 38px;
+  width: 100px;
+  height: 50px;
+  bottom: 8px;
+  right: 160px;
   background: var(--green);
   opacity: 0.4;
   animation: hero-blob-b 11s ease-in-out infinite;
   animation-delay: -6s;
 }
 .office-blob-c {
-  width: 180px;
-  height: 170px;
-  top: 40%;
-  left: 40%;
+  width: 110px;
+  height: 60px;
+  bottom: 8px;
+  right: 18px;
   background: var(--sky);
   opacity: 0.22;
   filter: blur(4px);
@@ -746,19 +746,19 @@ p {
 }
 
 .contact-blob-a {
-  width: 300px;
-  height: 275px;
-  bottom: 45px;
-  left: 42px;
+  width: 140px;
+  height: 80px;
+  bottom: 14px;
+  left: 18px;
   background: var(--green);
   opacity: 0.4;
   animation: hero-blob-a 17s ease-in-out infinite;
   animation-delay: -12s;
 }
 .contact-blob-b {
-  width: 230px;
-  height: 215px;
-  top: 35px;
+  width: 140px;
+  height: 85px;
+  top: 14px;
   left: 4%;
   background: var(--sky);
   opacity: 0.4;
@@ -766,10 +766,10 @@ p {
   animation-delay: -4s;
 }
 .contact-blob-c {
-  width: 170px;
-  height: 160px;
-  top: 46%;
-  left: 6%;
+  width: 120px;
+  height: 70px;
+  bottom: 14px;
+  right: 18px;
   background: var(--fuchsia);
   opacity: 0.18;
   filter: blur(4px);
@@ -777,31 +777,107 @@ p {
   animation-delay: -9s;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .about-blob-a,
-  .about-blob-b,
-  .services-blob-a,
   .services-blob-b,
   .process-blob-a,
-  .process-blob-b,
+  .purpose-blob-c,
+  .office-blob-c {
+    width: 100px;
+    height: 50px;
+    top: 8px;
+    right: 10px;
+  }
+  .services-blob-a,
+  .process-blob-c,
   .difference-blob-a,
-  .difference-blob-b,
   .purpose-blob-a,
-  .purpose-blob-b,
-  .office-blob-a,
-  .office-blob-b,
-  .contact-blob-a,
-  .contact-blob-b {
-    width: 180px;
-    height: 170px;
+  .office-blob-a {
+    width: 95px;
+    height: 46px;
+    top: 8px;
+    left: 10px;
+  }
+  .about-blob-b,
+  .services-blob-c,
+  .process-blob-b {
+    width: 85px;
+    height: 42px;
+    bottom: 6px;
+    left: 10px;
   }
   .about-blob-c,
-  .services-blob-c,
-  .process-blob-c,
-  .difference-blob-c,
-  .purpose-blob-c,
+  .difference-blob-b,
+  .purpose-blob-b {
+    width: 85px;
+    height: 42px;
+    bottom: 6px;
+    right: 10px;
+  }
+  .office-blob-b {
+    width: 85px;
+    height: 42px;
+    bottom: 6px;
+    right: 120px;
+  }
+  .contact-blob-b {
+    width: 100px;
+    height: 50px;
+    top: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-blob-a,
+  .services-blob-b,
+  .process-blob-a,
   .office-blob-c,
+  .purpose-blob-c {
+    width: 110px;
+    height: 68px;
+    top: 10px;
+    right: 10px;
+  }
+  .services-blob-a,
+  .process-blob-c,
+  .difference-blob-a,
+  .purpose-blob-a,
+  .office-blob-a {
+    width: 110px;
+    height: 68px;
+    top: 10px;
+    left: 10px;
+  }
+  .about-blob-b,
+  .process-blob-b,
+  .services-blob-c,
+  .contact-blob-a {
+    width: 110px;
+    height: 68px;
+    bottom: 10px;
+    left: 10px;
+  }
+  .about-blob-c,
+  .difference-blob-b,
+  .purpose-blob-b,
   .contact-blob-c {
+    width: 110px;
+    height: 68px;
+    bottom: 10px;
+    right: 10px;
+  }
+  .office-blob-b {
+    width: 80px;
+    height: 40px;
+    bottom: 6px;
+    right: 110px;
+  }
+  .contact-blob-b {
+    width: 110px;
+    height: 68px;
+    top: 10px;
+  }
+  .difference-blob-c {
     display: none;
   }
 }
