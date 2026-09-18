@@ -449,11 +449,11 @@ p {
   }
   35% {
     border-radius: 63% 37% 42% 58% / 55% 60% 40% 45%;
-    transform: scale(1.06) translate(12px, -10px);
+    transform: scale(1.14) translate(20px, -16px);
   }
   70% {
     border-radius: 38% 62% 55% 45% / 65% 35% 65% 35%;
-    transform: scale(0.95) translate(-10px, 10px);
+    transform: scale(0.88) translate(-17px, 17px);
   }
 }
 @keyframes hero-blob-b {
@@ -464,11 +464,11 @@ p {
   }
   40% {
     border-radius: 40% 60% 62% 38% / 60% 40% 60% 40%;
-    transform: scale(1.05) translate(-10px, 8px);
+    transform: scale(1.13) translate(-18px, 14px);
   }
   75% {
     border-radius: 62% 38% 45% 55% / 45% 62% 38% 55%;
-    transform: scale(0.96) translate(8px, -8px);
+    transform: scale(0.87) translate(14px, -14px);
   }
 }
 .hero-blob-a {
@@ -476,8 +476,9 @@ p {
   height: 420px;
   top: -130px;
   left: -140px;
-  background: var(--bg-soft-green-deep);
-  animation: hero-blob-a 17s ease-in-out infinite;
+  background: var(--sky);
+  opacity: 0.4;
+  animation: hero-blob-a 13s ease-in-out infinite;
   animation-delay: -3s;
 }
 .hero-blob-b {
@@ -485,8 +486,9 @@ p {
   height: 360px;
   bottom: -120px;
   left: 40px;
-  background: var(--bg-alt);
-  animation: hero-blob-b 21s ease-in-out infinite;
+  background: var(--blue);
+  opacity: 0.35;
+  animation: hero-blob-b 16s ease-in-out infinite;
   animation-delay: -7s;
 }
 .hero-blob-c {
@@ -494,9 +496,9 @@ p {
   height: 200px;
   bottom: 90px;
   left: 32%;
-  background: var(--bg-soft-green);
-  opacity: 0.85;
-  animation: hero-blob-a 13s ease-in-out infinite;
+  background: var(--green);
+  opacity: 0.32;
+  animation: hero-blob-a 10s ease-in-out infinite;
   animation-delay: -1s;
 }
 .hero-blob-d {
@@ -504,8 +506,9 @@ p {
   height: 220px;
   top: 90px;
   left: 26%;
-  background: #fbe4ee;
-  animation: hero-blob-b 24s ease-in-out infinite;
+  background: var(--fuchsia);
+  opacity: 0.28;
+  animation: hero-blob-b 18s ease-in-out infinite;
   animation-delay: -9s;
 }
 .reduced-motion .hero-blob {
@@ -527,13 +530,15 @@ p {
 }
 
 /* Burbujas de fondo reutilizadas en el resto de secciones, mismo criterio del hero:
-   se deforman solas muy lento y desincronizadas, para que las secciones no se vean vacías
-   (pedido del cliente, sept. 2026). Van detrás de todo el contenido de cada sección
-   (z-index: -1 dentro de su propio contexto de apilamiento, por eso cada sección
-   ahora tiene position: relative; z-index: 0;). Cada sección tiene 3 burbujas: dos
-   asomando desde una esquina y una tercera "flotante" en una posición intermedia,
-   para que no se vean siempre en el mismo lugar. Bordes suavizados con blur para que
-   se lean como manchas orgánicas y no como formas geométricas. */
+   se deforman solas y se mueven bastante (pedido del cliente, sept. 2026: quería más
+   movimiento y colores más vividos, porque los tonos pastel casi no se notaban contra
+   el fondo claro). Van detrás de todo el contenido de cada sección (z-index: -1 dentro
+   de su propio contexto de apilamiento, por eso cada sección tiene position: relative;
+   z-index: 0;). Cada sección tiene 3 burbujas: dos asomando desde una esquina, con
+   colores de marca bien saturados (sky/blue/green/fuchsia) a opacidad moderada para
+   que se noten sin volverse un bloque sólido, y una tercera "flotante" en una posición
+   intermedia que puede caer sobre texto -- esa va más difuminada (blur mayor, opacidad
+   menor) para disimularla, tal como pidió el cliente. */
 .section-blobs {
   position: absolute;
   inset: 0;
@@ -557,15 +562,15 @@ p {
   }
   30% {
     border-radius: 60% 40% 45% 55% / 42% 58% 42% 58%;
-    transform: scale(1.1) translate(14px, 12px) rotate(6deg);
+    transform: scale(1.18) translate(22px, 20px) rotate(8deg);
   }
   62% {
     border-radius: 40% 60% 58% 42% / 60% 45% 55% 40%;
-    transform: scale(0.92) translate(-12px, -6px) rotate(-4deg);
+    transform: scale(0.85) translate(-20px, -10px) rotate(-6deg);
   }
   85% {
     border-radius: 55% 45% 50% 50% / 45% 55% 42% 58%;
-    transform: scale(1.04) translate(6px, -14px) rotate(3deg);
+    transform: scale(1.08) translate(10px, -22px) rotate(4deg);
   }
 }
 @keyframes blob-morph-d {
@@ -576,15 +581,15 @@ p {
   }
   28% {
     border-radius: 40% 60% 55% 45% / 60% 50% 50% 40%;
-    transform: scale(1.08) translate(-14px, 10px) rotate(-5deg);
+    transform: scale(1.16) translate(-22px, 16px) rotate(-7deg);
   }
   58% {
     border-radius: 58% 42% 50% 50% / 45% 55% 45% 55%;
-    transform: scale(0.94) translate(10px, -12px) rotate(4deg);
+    transform: scale(0.86) translate(16px, -20px) rotate(6deg);
   }
   82% {
     border-radius: 45% 55% 60% 40% / 55% 40% 60% 45%;
-    transform: scale(1.05) translate(-8px, -6px) rotate(-3deg);
+    transform: scale(1.1) translate(-14px, -10px) rotate(-4deg);
   }
 }
 
@@ -593,8 +598,9 @@ p {
   height: 335px;
   top: -100px;
   right: -110px;
-  background: var(--bg-alt);
-  animation: hero-blob-a 19s ease-in-out infinite;
+  background: var(--blue);
+  opacity: 0.4;
+  animation: hero-blob-a 15s ease-in-out infinite;
   animation-delay: -4s;
 }
 .about-blob-b {
@@ -602,9 +608,9 @@ p {
   height: 250px;
   bottom: -90px;
   left: -70px;
-  background: var(--bg-soft-green);
-  opacity: 0.85;
-  animation: hero-blob-b 23s ease-in-out infinite;
+  background: var(--green);
+  opacity: 0.4;
+  animation: hero-blob-b 17s ease-in-out infinite;
   animation-delay: -11s;
 }
 .about-blob-c {
@@ -612,9 +618,10 @@ p {
   height: 175px;
   top: 38%;
   left: 44%;
-  background: #fbe4ee;
-  opacity: 0.7;
-  animation: blob-morph-c 16s ease-in-out infinite;
+  background: var(--fuchsia);
+  opacity: 0.2;
+  filter: blur(4px);
+  animation: blob-morph-c 12s ease-in-out infinite;
   animation-delay: -6s;
 }
 
@@ -623,8 +630,9 @@ p {
   height: 315px;
   top: -110px;
   left: -100px;
-  background: var(--bg-soft-green-deep);
-  animation: hero-blob-b 20s ease-in-out infinite;
+  background: var(--green);
+  opacity: 0.42;
+  animation: hero-blob-b 15s ease-in-out infinite;
   animation-delay: -6s;
 }
 .services-blob-b {
@@ -632,9 +640,9 @@ p {
   height: 270px;
   bottom: -100px;
   right: -90px;
-  background: #fbe4ee;
-  opacity: 0.85;
-  animation: hero-blob-a 16s ease-in-out infinite;
+  background: var(--fuchsia);
+  opacity: 0.28;
+  animation: hero-blob-a 12s ease-in-out infinite;
   animation-delay: -2s;
 }
 .services-blob-c {
@@ -642,9 +650,10 @@ p {
   height: 165px;
   top: 30%;
   left: 8%;
-  background: var(--bg-alt);
-  opacity: 0.6;
-  animation: blob-morph-d 19s ease-in-out infinite;
+  background: var(--sky);
+  opacity: 0.22;
+  filter: blur(4px);
+  animation: blob-morph-d 14s ease-in-out infinite;
   animation-delay: -13s;
 }
 
@@ -653,8 +662,9 @@ p {
   height: 295px;
   top: -90px;
   right: -80px;
-  background: var(--bg-soft-green);
-  animation: hero-blob-a 22s ease-in-out infinite;
+  background: var(--sky);
+  opacity: 0.42;
+  animation: hero-blob-a 16s ease-in-out infinite;
   animation-delay: -8s;
 }
 .process-blob-b {
@@ -662,9 +672,9 @@ p {
   height: 230px;
   bottom: -80px;
   left: -60px;
-  background: var(--bg-alt);
-  opacity: 0.85;
-  animation: hero-blob-b 15s ease-in-out infinite;
+  background: var(--blue);
+  opacity: 0.4;
+  animation: hero-blob-b 11s ease-in-out infinite;
   animation-delay: -5s;
 }
 .process-blob-c {
@@ -672,9 +682,10 @@ p {
   height: 160px;
   bottom: 16%;
   right: 30%;
-  background: #fbe4ee;
-  opacity: 0.65;
-  animation: blob-morph-c 14s ease-in-out infinite;
+  background: var(--fuchsia);
+  opacity: 0.2;
+  filter: blur(4px);
+  animation: blob-morph-c 10s ease-in-out infinite;
   animation-delay: -2s;
 }
 
@@ -683,8 +694,8 @@ p {
   height: 315px;
   top: -100px;
   left: -90px;
-  background: rgba(255, 255, 255, 0.45);
-  animation: hero-blob-a 18s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.5);
+  animation: hero-blob-a 14s ease-in-out infinite;
   animation-delay: -9s;
 }
 .difference-blob-b {
@@ -692,9 +703,9 @@ p {
   height: 250px;
   bottom: -90px;
   right: -80px;
-  background: var(--bg-soft-green);
-  opacity: 0.65;
-  animation: hero-blob-b 24s ease-in-out infinite;
+  background: var(--green);
+  opacity: 0.4;
+  animation: hero-blob-b 18s ease-in-out infinite;
   animation-delay: -1s;
 }
 .difference-blob-c {
@@ -702,8 +713,9 @@ p {
   height: 175px;
   top: 34%;
   right: 12%;
-  background: rgba(255, 255, 255, 0.55);
-  animation: blob-morph-d 17s ease-in-out infinite;
+  background: rgba(255, 255, 255, 0.6);
+  filter: blur(4px);
+  animation: blob-morph-d 13s ease-in-out infinite;
   animation-delay: -10s;
 }
 
@@ -712,8 +724,9 @@ p {
   height: 295px;
   top: -90px;
   left: -90px;
-  background: #fbe4ee;
-  animation: hero-blob-b 17s ease-in-out infinite;
+  background: var(--fuchsia);
+  opacity: 0.3;
+  animation: hero-blob-b 13s ease-in-out infinite;
   animation-delay: -7s;
 }
 .purpose-blob-b {
@@ -721,9 +734,9 @@ p {
   height: 230px;
   bottom: -80px;
   right: -70px;
-  background: var(--bg-alt);
-  opacity: 0.85;
-  animation: hero-blob-a 21s ease-in-out infinite;
+  background: var(--sky);
+  opacity: 0.42;
+  animation: hero-blob-a 16s ease-in-out infinite;
   animation-delay: -3s;
 }
 .purpose-blob-c {
@@ -731,9 +744,10 @@ p {
   height: 165px;
   bottom: 22%;
   left: 30%;
-  background: var(--bg-soft-green);
-  opacity: 0.6;
-  animation: blob-morph-c 20s ease-in-out infinite;
+  background: var(--blue);
+  opacity: 0.22;
+  filter: blur(4px);
+  animation: blob-morph-c 15s ease-in-out infinite;
   animation-delay: -15s;
 }
 
@@ -742,8 +756,9 @@ p {
   height: 315px;
   top: -100px;
   right: -100px;
-  background: var(--bg-soft-green-deep);
-  animation: hero-blob-a 20s ease-in-out infinite;
+  background: var(--blue);
+  opacity: 0.4;
+  animation: hero-blob-a 15s ease-in-out infinite;
   animation-delay: -10s;
 }
 .office-blob-b {
@@ -751,9 +766,9 @@ p {
   height: 240px;
   bottom: -80px;
   left: -70px;
-  background: var(--bg-soft-green);
-  opacity: 0.85;
-  animation: hero-blob-b 14s ease-in-out infinite;
+  background: var(--green);
+  opacity: 0.4;
+  animation: hero-blob-b 11s ease-in-out infinite;
   animation-delay: -6s;
 }
 .office-blob-c {
@@ -761,9 +776,10 @@ p {
   height: 170px;
   top: 40%;
   left: 40%;
-  background: #fbe4ee;
-  opacity: 0.6;
-  animation: blob-morph-d 15s ease-in-out infinite;
+  background: var(--sky);
+  opacity: 0.22;
+  filter: blur(4px);
+  animation: blob-morph-d 11s ease-in-out infinite;
   animation-delay: -4s;
 }
 
@@ -772,9 +788,9 @@ p {
   height: 275px;
   bottom: -90px;
   left: -80px;
-  background: var(--bg-soft-green);
-  opacity: 0.62;
-  animation: hero-blob-a 23s ease-in-out infinite;
+  background: var(--green);
+  opacity: 0.4;
+  animation: hero-blob-a 17s ease-in-out infinite;
   animation-delay: -12s;
 }
 .contact-blob-b {
@@ -782,9 +798,9 @@ p {
   height: 215px;
   top: -70px;
   left: 20%;
-  background: var(--bg-alt);
-  opacity: 0.55;
-  animation: hero-blob-b 19s ease-in-out infinite;
+  background: var(--sky);
+  opacity: 0.4;
+  animation: hero-blob-b 14s ease-in-out infinite;
   animation-delay: -4s;
 }
 .contact-blob-c {
@@ -792,9 +808,10 @@ p {
   height: 160px;
   top: 46%;
   left: 6%;
-  background: #fbe4ee;
-  opacity: 0.45;
-  animation: blob-morph-c 21s ease-in-out infinite;
+  background: var(--fuchsia);
+  opacity: 0.18;
+  filter: blur(4px);
+  animation: blob-morph-c 16s ease-in-out infinite;
   animation-delay: -9s;
 }
 

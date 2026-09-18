@@ -265,7 +265,7 @@
 }
 .contact-with-forms > article {
   padding: 36px 32px 28px;
-  background: #16305a;
+  background: var(--ink);
   color: var(--cream);
   border: 1px solid rgba(70, 189, 242, 0.22);
   border-radius: 26px;
