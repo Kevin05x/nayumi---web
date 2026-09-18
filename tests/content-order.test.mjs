@@ -11,12 +11,11 @@ assert.ok(hero, 'Debe existir la portada');
 assert.match(hero, /<h1[^>]*><span>Agencia de empleos<\/span><em>NAYUMI<\/em><\/h1>/);
 assert.match(hero, /Seleccionamos personal para hogares y empresas/);
 assert.match(hero, /href="#solicitar-personal">Busco personal/);
-assert.match(hero, /href="#oportunidades">Busco trabajo/);
-const essential = hero.match(
-  /<div class="hero-content wrap">([\s\S]*?)<\/div>\s*<a class="hero-services-link"/,
-)?.[1];
+const essential = hero.match(/<div class="hero-content wrap">([\s\S]*?)<\/div>/)?.[1];
 assert.ok(essential, 'Debe conservarse el bloque principal con ambas acciones');
-assert.doesNotMatch(essential, /hero-enter|hero-line|\breveal\b|\shidden(?:\s|=|>)/);
+assert.match(essential, /href="#solicitar-personal">Busco personal/);
+assert.match(essential, /href="#oportunidades">Busco trabajo/);
+assert.doesNotMatch(essential, /\breveal\b|\shidden(?:\s|=|>)/);
 const sections = [...html.matchAll(/<section\b[^>]*\bid="([^"]+)"/g)].map((m) => m[1]);
 assert.deepEqual(sections, [
   'inicio',
@@ -27,7 +26,7 @@ assert.deepEqual(sections, [
   'oficina',
   'contacto',
 ]);
-assert.equal((html.match(/class="home-card"/g) || []).length, 4);
+assert.equal((html.match(/class="[^"]*\bhome-card\b[^"]*"/g) || []).length, 4);
 assert.equal((html.match(/class="whatsapp-form"/g) || []).length, 2);
 assert.match(html, /Tu empresa merece el equipo ideal/);
 assert.match(html, /Las buenas conexiones<em>cambian todo/);

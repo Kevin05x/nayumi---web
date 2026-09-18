@@ -193,6 +193,7 @@ test('Capturas de revisión y aumento de texto', async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height });
     await page.goto('/');
     await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(1200);
     await page.screenshot({ path: testInfo.outputPath(`portada-${width}.png`) });
     await page.locator('#solicitar-personal').scrollIntoViewIfNeeded();
     await page.screenshot({ path: testInfo.outputPath(`contacto-${width}.png`) });

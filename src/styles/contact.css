@@ -187,8 +187,8 @@
 }
 .contact-shade {
   background:
-    linear-gradient(90deg, #071a38, transparent 80%),
-    linear-gradient(0deg, #071a38 0%, #071a38 45%, transparent 85%);
+    linear-gradient(90deg, var(--bg-main), transparent 80%),
+    linear-gradient(0deg, var(--bg-main) 0%, var(--bg-main) 45%, transparent 85%);
 }
 @media (max-width: 1000px) {
   .contact-with-forms {
@@ -254,8 +254,8 @@
   }
   .contact-shade {
     background:
-      linear-gradient(0deg, #071a38 65%, transparent 100%),
-      linear-gradient(90deg, rgba(7, 26, 56, 0.7), transparent);
+      linear-gradient(0deg, var(--bg-main) 65%, transparent 100%),
+      linear-gradient(90deg, rgba(244, 247, 251, 0.7), transparent);
   }
 }
 /* Client reference: contained dark cards, soft fields and pill-shaped actions. */
@@ -266,6 +266,7 @@
 .contact-with-forms > article {
   padding: 36px 32px 28px;
   background: #0b1e3b;
+  color: var(--cream);
   border: 1px solid rgba(70, 189, 242, 0.22);
   border-radius: 26px;
   box-shadow: 0 20px 60px rgba(2, 10, 25, 0.35);
@@ -275,12 +276,14 @@
 .contact-with-forms > article > .eyebrow {
   font-size: 11px;
   letter-spacing: 0.13em;
+  color: #b5cce5;
 }
 .contact-with-forms > article > h3 {
   font-size: clamp(30px, 2.9vw, 42px);
   line-height: 1.08;
   margin-top: 19px;
   margin-bottom: 16px;
+  color: #ffffff;
 }
 .contact-with-forms > article > p {
   font-size: 14px;

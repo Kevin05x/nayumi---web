@@ -112,7 +112,7 @@ h3 {
 }
 em {
   font-weight: 400;
-  color: var(--blue);
+  color: #0a5fb8;
 }
 p {
   line-height: 1.7;
@@ -263,8 +263,8 @@ p {
   align-items: center;
   gap: 36px;
   padding: 28px 56px;
-  color: var(--cream);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--dark);
+  border-bottom: 1px solid var(--line);
   transition:
     background 0.3s,
     padding 0.3s,
@@ -323,22 +323,26 @@ p {
 }
 .header-contact {
   padding: 10px 19px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  border: 1px solid var(--line);
   border-radius: 30px;
   font-size: 14px;
+  color: var(--ink);
   transition:
     background 0.3s,
     border-color 0.3s,
     color 0.3s;
 }
 .site-header:not(.scrolled) .header-contact {
-  background: rgba(27, 154, 67, 0.22);
-  border-color: rgba(255, 255, 255, 0.48);
+  background: rgba(27, 154, 67, 0.12);
+  border-color: rgba(27, 154, 67, 0.35);
   backdrop-filter: blur(10px);
-  color: #ffffff;
+  color: var(--ink);
 }
-.site-header:not(.scrolled) .header-contact:hover {
-  background: rgba(27, 154, 67, 0.38);
+.site-header:not(.scrolled) .header-contact:hover,
+.scrolled .header-contact:hover {
+  background: var(--green);
+  border-color: var(--green);
+  color: #ffffff;
 }
 .scrolled .header-contact {
   border-color: var(--line);
@@ -374,8 +378,8 @@ p {
   min-height: 790px;
   height: 100svh;
   max-height: 1100px;
-  background: var(--dark);
-  color: var(--cream);
+  background: var(--bg-main);
+  color: var(--dark);
   position: relative;
   overflow: hidden;
 }
@@ -391,7 +395,7 @@ p {
   max-width: none;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 50%;
+  object-position: 55% 35%;
   right: 0;
   top: 0;
   mask-image: linear-gradient(90deg, transparent 0%, #000 25%, #000 100%);
@@ -402,8 +406,8 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, #071a38 2%, rgba(7, 26, 56, 0.88) 22%, transparent 65%),
-    linear-gradient(0deg, #071a38 0%, transparent 24%);
+    linear-gradient(90deg, var(--bg-main) 2%, rgba(244, 247, 251, 0.9) 22%, transparent 65%),
+    linear-gradient(0deg, var(--bg-main) 0%, transparent 24%);
 }
 .hero-glow {
   position: absolute;
@@ -423,6 +427,103 @@ p {
   opacity: 0.06;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Cpath fill='%23fff' filter='url(%23n)' opacity='.7' d='M0 0h180v180H0z'/%3E%3C/svg%3E");
 }
+
+/* Hero: formas orgánicas animadas de fondo (fondo claro, pedido del cliente sept. 2026) */
+.hero-blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-blob {
+  position: absolute;
+  will-change: transform, border-radius;
+}
+@keyframes hero-blob-a {
+  0%,
+  100% {
+    border-radius: 42% 58% 68% 32% / 45% 42% 58% 55%;
+    transform: scale(1) translate(0, 0);
+  }
+  35% {
+    border-radius: 63% 37% 42% 58% / 55% 60% 40% 45%;
+    transform: scale(1.06) translate(12px, -10px);
+  }
+  70% {
+    border-radius: 38% 62% 55% 45% / 65% 35% 65% 35%;
+    transform: scale(0.95) translate(-10px, 10px);
+  }
+}
+@keyframes hero-blob-b {
+  0%,
+  100% {
+    border-radius: 55% 45% 40% 60% / 40% 55% 45% 60%;
+    transform: scale(1) translate(0, 0);
+  }
+  40% {
+    border-radius: 40% 60% 62% 38% / 60% 40% 60% 40%;
+    transform: scale(1.05) translate(-10px, 8px);
+  }
+  75% {
+    border-radius: 62% 38% 45% 55% / 45% 62% 38% 55%;
+    transform: scale(0.96) translate(8px, -8px);
+  }
+}
+.hero-blob-a {
+  width: 460px;
+  height: 420px;
+  top: -130px;
+  left: -140px;
+  background: var(--bg-soft-green-deep);
+  animation: hero-blob-a 17s ease-in-out infinite;
+  animation-delay: -3s;
+}
+.hero-blob-b {
+  width: 380px;
+  height: 360px;
+  bottom: -120px;
+  left: 40px;
+  background: var(--bg-alt);
+  animation: hero-blob-b 21s ease-in-out infinite;
+  animation-delay: -7s;
+}
+.hero-blob-c {
+  width: 220px;
+  height: 200px;
+  bottom: 90px;
+  left: 32%;
+  background: var(--bg-soft-green);
+  opacity: 0.85;
+  animation: hero-blob-a 13s ease-in-out infinite;
+  animation-delay: -1s;
+}
+.hero-blob-d {
+  width: 240px;
+  height: 220px;
+  top: 90px;
+  left: 26%;
+  background: #fbe4ee;
+  animation: hero-blob-b 24s ease-in-out infinite;
+  animation-delay: -9s;
+}
+.reduced-motion .hero-blob {
+  animation: none !important;
+}
+@media (max-width: 600px) {
+  .hero-blob-a {
+    width: 260px;
+    height: 240px;
+  }
+  .hero-blob-b {
+    width: 220px;
+    height: 210px;
+  }
+  .hero-blob-c,
+  .hero-blob-d {
+    display: none;
+  }
+}
 .hero-content {
   position: relative;
   z-index: 2;
@@ -432,7 +533,7 @@ p {
 .hero .eyebrow {
   font-size: 11px;
   letter-spacing: 0.16em;
-  color: #b5cce5;
+  color: var(--muted);
   margin-bottom: 30px;
 }
 .hero-badge {
@@ -499,7 +600,7 @@ p {
 }
 .hero-description {
   margin-top: 29px;
-  color: #c2d5ea;
+  color: var(--muted);
   font-size: 16px;
   line-height: 1.65;
 }
@@ -523,15 +624,17 @@ p {
   align-items: center;
   gap: 16px;
   padding: 19px 25px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(7, 26, 56, 0.12);
   border-radius: 4px;
   font-size: 13px;
+  color: var(--dark);
 }
 .hero-note small {
   display: block;
-  color: #9bb8d7;
+  color: var(--muted);
   font-size: 11px;
   margin-top: 3px;
 }
@@ -549,11 +652,11 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-top: 1px solid var(--line);
   padding-top: 24px;
   font-size: 10px;
   letter-spacing: 0.16em;
-  color: #b5cce5;
+  color: var(--muted);
 }
 .scroll-cue {
   display: flex;
@@ -583,7 +686,7 @@ p {
 .services {
   position: relative;
   z-index: 4;
-  background: #d8ecfa;
+  background: var(--bg-main);
   border-radius: 20px 20px 0 0;
   margin-top: -18px;
   padding-bottom: 100px;
@@ -854,7 +957,7 @@ p {
 }
 .about {
   border-top: 1px solid var(--line);
-  background: #e6f5ea;
+  background: var(--bg-main);
 }
 .about-layout {
   display: grid;
@@ -938,7 +1041,7 @@ p {
   color: var(--muted);
 }
 .process {
-  background: #f0f9f2;
+  background: var(--bg-main);
 }
 .process .split-heading {
   margin-bottom: 65px;
@@ -1111,7 +1214,7 @@ p {
   letter-spacing: 0.12em;
 }
 .purpose {
-  background: #e2f3e6;
+  background: var(--bg-main);
   padding-bottom: 70px;
 }
 .mission {
@@ -1238,7 +1341,7 @@ details p {
 }
 .office {
   padding-top: 90px;
-  background: var(--bg-trans);
+  background: var(--bg-main);
 }
 .office-layout {
   display: grid;
@@ -1308,8 +1411,8 @@ details p {
 }
 .contact {
   position: relative;
-  background: var(--dark);
-  color: var(--cream);
+  background: var(--bg-main);
+  color: var(--dark);
   overflow: hidden;
   padding-block: 100px;
 }
@@ -1327,8 +1430,8 @@ details p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, #071a38, transparent 80%),
-    linear-gradient(0deg, #071a38 0%, rgba(7, 26, 56, 0.9) 20%, transparent 65%);
+    linear-gradient(90deg, var(--bg-main), transparent 80%),
+    linear-gradient(0deg, var(--bg-main) 0%, rgba(244, 247, 251, 0.9) 20%, transparent 65%);
 }
 .contact-content {
   position: relative;
@@ -1337,6 +1440,7 @@ details p {
 .contact h2 {
   font-size: clamp(60px, 7.8vw, 112px);
   margin-top: 30px;
+  color: var(--dark);
 }
 .contact h2 em {
   color: #ff5d93;
@@ -1554,12 +1658,17 @@ details p {
     top: 0;
     bottom: auto;
     object-fit: cover;
-    object-position: 84% center;
+    object-position: 78% 35%;
   }
   .hero-art:after {
     background:
-      linear-gradient(90deg, #071a38 0%, rgba(7, 26, 56, 0.9) 48%, rgba(7, 26, 56, 0.15) 84%),
-      linear-gradient(0deg, #071a38 0%, transparent 30%);
+      linear-gradient(
+        90deg,
+        var(--bg-main) 0%,
+        rgba(244, 247, 251, 0.9) 48%,
+        rgba(244, 247, 251, 0.15) 84%
+      ),
+      linear-gradient(0deg, var(--bg-main) 0%, transparent 30%);
   }
   .home-card {
     height: 540px;
@@ -1647,13 +1756,18 @@ details p {
     top: 0;
     bottom: auto;
     object-fit: cover;
-    object-position: 84% center;
+    object-position: 80% 35%;
     opacity: 0.63;
   }
   .hero-art:after {
     background:
-      linear-gradient(90deg, #071a38 0%, rgba(7, 26, 56, 0.9) 52%, rgba(7, 26, 56, 0.16) 88%),
-      linear-gradient(0deg, #071a38 0%, transparent 34%);
+      linear-gradient(
+        90deg,
+        var(--bg-main) 0%,
+        rgba(244, 247, 251, 0.9) 52%,
+        rgba(244, 247, 251, 0.16) 88%
+      ),
+      linear-gradient(0deg, var(--bg-main) 0%, transparent 34%);
   }
   .hero-note {
     bottom: 105px;
@@ -1851,7 +1965,7 @@ details p {
     width: 44px;
     height: 44px;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.33);
+    border: 1px solid var(--line);
     border-radius: 50%;
     padding: 12px;
   }
@@ -1949,19 +2063,24 @@ details p {
     bottom: auto;
     opacity: 0.86;
     object-fit: cover;
-    object-position: 92% center;
+    object-position: 85% 35%;
     mask-image: none;
   }
   .hero-art:after {
     background:
       linear-gradient(
         90deg,
-        #071a38 0%,
-        rgba(7, 26, 56, 0.88) 42%,
-        rgba(7, 26, 56, 0.28) 72%,
+        var(--bg-main) 0%,
+        rgba(244, 247, 251, 0.88) 42%,
+        rgba(244, 247, 251, 0.28) 72%,
         transparent 100%
       ),
-      linear-gradient(0deg, #071a38 0%, rgba(7, 26, 56, 0.2) 42%, rgba(7, 26, 56, 0.1) 100%);
+      linear-gradient(
+        0deg,
+        var(--bg-main) 0%,
+        rgba(244, 247, 251, 0.2) 42%,
+        rgba(244, 247, 251, 0.1) 100%
+      );
   }
   .hero-glow {
     display: none;
@@ -2535,8 +2654,8 @@ html.reduced-motion {
   align-items: center;
   gap: 35px;
   min-height: 56px;
-  background: #d8ecfa;
-  box-shadow: 0 -9px 16px #d8ecfa;
+  background: var(--bg-main);
+  box-shadow: 0 -9px 16px var(--bg-main);
 }
 .stack-status {
   display: flex;
@@ -2973,10 +3092,10 @@ html:not(.js-values) .depth-controls {
   align-items: center;
   gap: 16px;
   font-size: 14px;
-  color: #b5cce5;
+  color: var(--muted);
   margin-top: 22px;
   padding-block: 6px;
-  border-bottom: 1px solid rgba(181, 204, 229, 0.44);
+  border-bottom: 1px solid var(--line);
 }
 .hero-note {
   bottom: 100px;
