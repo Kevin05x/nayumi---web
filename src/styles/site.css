@@ -1718,6 +1718,14 @@ details p {
   align-items: center;
   max-width: 1130px;
 }
+.office-photo-stack {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  max-width: 350px;
+  margin-inline: auto;
+  padding: 22px 30px 10px 0;
+}
 .office-photo {
   position: relative;
   width: 100%;
@@ -1726,6 +1734,16 @@ details p {
   transform: rotate(-3deg);
   border: 10px solid #ffffff;
   box-shadow: 0 18px 36px rgba(7, 26, 56, 0.12);
+}
+.office-photo-secondary {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 62%;
+  max-width: 220px;
+  margin-inline: 0;
+  transform: rotate(8deg);
 }
 .office-photo > img {
   width: 100%;
@@ -2775,9 +2793,19 @@ details p {
   .office-copy h2 {
     font-size: 48px;
   }
+  .office-photo-stack {
+    padding: 0;
+  }
   .office-photo {
     width: 75%;
     margin: 10px auto 15px;
+  }
+  .office-photo-secondary {
+    position: static;
+    width: 60%;
+    max-width: none;
+    margin: 0 auto 15px;
+    transform: rotate(3deg);
   }
   .office-photo figcaption {
     font-size: 7px;

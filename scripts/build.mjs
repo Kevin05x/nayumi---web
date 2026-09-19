@@ -39,7 +39,7 @@ export async function build() {
     }
   }
   const assets = await readdir(path.join(root, 'public/assets'), { withFileTypes: true });
-  if (assets.filter((entry) => entry.name.endsWith('.webp')).length !== 12)
+  if (assets.filter((entry) => entry.name.endsWith('.webp')).length !== 13)
     throw new Error('Faltan imágenes aprobadas');
   for (const entry of assets) {
     if (!entry.isFile() || !/^[\w-]+\.(webp|png|svg|ttf|txt)$/.test(entry.name))
