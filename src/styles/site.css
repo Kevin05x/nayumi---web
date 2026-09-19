@@ -1736,6 +1736,7 @@ details p {
 }
 .office-photo-secondary {
   transform: rotate(2.5deg);
+  max-width: 420px;
 }
 .office-photo > img {
   width: 100%;
@@ -1744,6 +1745,10 @@ details p {
   object-position: 50% 25%;
   filter: brightness(1.02) contrast(1.02);
   height: auto;
+}
+.office-photo-secondary > img {
+  aspect-ratio: 1.05;
+  object-position: 32% 42%;
 }
 .office-photo figcaption {
   padding: 19px 10px 11px;
