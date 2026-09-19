@@ -46,6 +46,11 @@ export async function build() {
       throw new Error('Recurso no previsto: ' + entry.name);
     files.set('assets/' + entry.name, null);
   }
+  // Archivos servidos en la raíz del sitio (dominio propio, SEO): CNAME, robots.txt, sitemap.xml.
+  const rootFileNames = ['CNAME', 'robots.txt', 'sitemap.xml'];
+  for (const name of rootFileNames) {
+    files.set(name, await readFile(path.join(root, 'public/root', name), 'utf8'));
+  }
   const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
   if (new Set(ids).size !== ids.length) throw new Error('ID duplicado');
   if ((html.match(/<h1\b/g) || []).length !== 1)
