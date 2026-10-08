@@ -1,4 +1,5 @@
 import { buildMessage } from './whatsapp.js';
+import { trackConversion } from './analytics.js';
 
 export function initContact() {
   document.querySelectorAll('.whatsapp-form').forEach((form) => {
@@ -28,6 +29,7 @@ export function initContact() {
         fallback.hidden = false;
         status.textContent =
           'Tu mensaje está preparado. Si WhatsApp no se abrió, usa el enlace de abajo.';
+        trackConversion();
         window.open(result.url, '_blank', 'noopener,noreferrer');
       } catch (error) {
         status.textContent = error.message;
